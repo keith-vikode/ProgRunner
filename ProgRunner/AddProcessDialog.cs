@@ -38,15 +38,13 @@ namespace ProgRunner
 
         private void BrowseButton_Click(object sender, EventArgs e)
         {
-            var dlg = new OpenFileDialog
+            using (var dlg = new OpenFileDialog())
             {
-                // todo
-            };
-
-            var result = dlg.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                ProcessPath.Text = dlg.FileName;
+                var result = dlg.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    ProcessPath.Text = dlg.FileName;
+                }
             }
         }
     }
