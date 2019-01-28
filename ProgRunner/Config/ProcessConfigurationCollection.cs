@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProgRunner.Config
 {
@@ -35,7 +32,7 @@ namespace ProgRunner.Config
 
         IEnumerator<ProcessConfigurationElement> IEnumerable<ProcessConfigurationElement>.GetEnumerator()
         {
-            return (from i in Enumerable.Range(0, this.Count)
+            return (from i in Enumerable.Range(0, Count)
                     select this[i]).GetEnumerator();
         }
     }
